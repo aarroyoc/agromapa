@@ -1,0 +1,5 @@
+Conocer los tipos de cultivo de CyL de forma didáctica
+Ver los cultivos mayoritarios en cada municipio
+Ver donde existe ese cultivo (de forma significativa)
+Ver evolución histórica
+Conexión WikiData-Wikipedia

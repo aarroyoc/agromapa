@@ -2,4 +2,21 @@ body, #map, svg{
     padding: 0;
     margin: 0;
     overflow: hidden;
+    font-family: "Fira Sans", sans-serif;
+}
+
+#title{
+    position: fixed;
+    top: -0.5em;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255,255,255,0.7);
+    /*font-family: "Staatliches", cursive;*/
+}
+#credits{
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0.5em;
+    font-size: 0.75em;
 }

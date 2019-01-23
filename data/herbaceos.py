@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json
 
 # iconv -f ISO-8859-1 -t UTF-8 herbaceos.csv > herbaceos_utf8.csv
 
@@ -34,6 +35,23 @@ delete_columns = ["Municipio",
     "Ocupación Primera Regadío",
     "Ocupaciones Posteriores Regadío"]
 df = df.drop(delete_columns, axis=1)
+
+with open("Castile and León_AL8.GeoJson") as f:
+    geojson = json.load(f)
+
+for feature in geojson["features"]:
+    code = feature["properties"]["alltags"]["ine:municipio"]
+    df_town = df[df["Año"]==2017]
+    df_town = df_town[df["INE"]==code]
+    feature["properties"]["herbaceos"] = df_town[["cultivo","Ocupacion"]].values.tolist()
+    feature["properties"]["herbaceos"].sort(key=lambda x: x[1],reverse=True)
+
+with open("AgroMapa.GeoJson","w") as f:
+    json.dump(geojson,f)
+
+"""
 for year in range(2010,2018):
     df_year = df[df["Año"]==year]
     df_year.to_csv(f"herbaceos_{year}.csv",index=False)
+"""
+    

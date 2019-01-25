@@ -1,4 +1,4 @@
-body, #map, svg{
+body, #map{
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -19,4 +19,62 @@ body, #map, svg{
     position: fixed;
     bottom: 0.5em;
     font-size: 0.75em;
+}
+
+#infopanel{
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    background-color: white;
+    height: 100vh;
+    transition: 1s;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: initial;
+}
+.infopanel-show{
+    transition: 1s;
+    right: 0vw !important;
+    width: 30vw;
+    max-width: 30vw;
+}
+
+#infopanel > p {
+    text-align: justify;
+}
+
+.close{
+    border: solid black;
+    width: 25pt;
+    height: 25pt;
+    font-size: 22pt;
+    text-align: center;
+}
+
+.infoheader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.infoheader > h1{
+    flex: 1;
+    text-align: center;
+}
+#content{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+#infoimage{
+    min-height: 25vh;
+    background-size: cover;
+    background-position: center;
+}
+#infocultivos{
+    flex: 1;
+    margin: 15px;
+    overflow-y: scroll;
+    width: calc(100% - 30px);
 }

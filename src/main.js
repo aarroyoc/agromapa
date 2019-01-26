@@ -117,7 +117,7 @@ function main(svg,mapData,cultivos){
         .style("stroke","black")
         .style("fill",(data,i)=>{
             try{
-                let id = data.properties.herbaceos[0][0];
+                let id = data.properties.cultivos[0][0];
                 let res = cultivos.evaluate(`/agromapa/cultivo[@id='${id}']/color/text()`,cultivos,null,XPathResult.ANY_TYPE,null);
                 let color = res.iterateNext().data;
                 return color;
@@ -142,14 +142,15 @@ function main(svg,mapData,cultivos){
             } );
             let infopanel = d3.select("#infopanel");
             let infocultivos = d3.select("#infocultivos");
-            infocultivo(data.properties.herbaceos,
+            infocultivo(data.properties.cultivos,
                 window.innerWidth/4,
-                data.properties.herbaceos.length*20);
+                data.properties.cultivos.length*20);
             infopanel.classed("infopanel-show",true);
         });
 }
 
 function infocultivo(data,width,height){
+    height = Math.max(height,100);
     d3.selectAll(".grafico-actual").remove();
     let svg = d3
         .select("#infocultivos")
@@ -161,7 +162,7 @@ function infocultivo(data,width,height){
     let x = d3
         .scaleLinear()
         .domain([0,d3.max(data.map((d)=> d[1]))])
-        .range([0,width-130]);
+        .range([0,width-165]);
     let y = d3
         .scaleBand()
         .rangeRound([0,height-20])
@@ -170,10 +171,10 @@ function infocultivo(data,width,height){
         
     let xAxis = d3.axisBottom(x).ticks(5);
     let yAxis = d3.axisLeft(y).ticks(data.map(d => d[0]));
-    svg.append("g").attr("class","x axis").attr("transform","translate(100,"+(height-20)+")").call(xAxis);
-    svg.append("g").attr("class","y axis").attr("transform","translate(100,0)").call(yAxis);
+    svg.append("g").attr("class","x axis").attr("transform","translate(150,"+(height-20)+")").call(xAxis);
+    svg.append("g").attr("class","y axis").attr("transform","translate(150,0)").call(yAxis);
 
-    let dataZone = svg.append("g").attr("transform","translate(100,0)");
+    let dataZone = svg.append("g").attr("transform","translate(150,0)");
 	dataZone.selectAll(".bar")
 		.data(data)
 		.enter()

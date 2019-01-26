@@ -71,10 +71,11 @@ for feature in geojson["features"]:
     df_town = df_town[df_town["INE"]==code]
     dl_town = dl[dl["Año"]==2017]
     dl_town = dl_town[dl_town["INE"]==code]
-    feature["properties"]["herbaceos"] = df_town[["cultivo","Ocupacion"]].values.tolist()
-    feature["properties"]["herbaceos"].sort(key=lambda x: x[1],reverse=True)
-    feature["properties"]["leñosos"] = dl_town[["cultivo","Ocupacion"]].values.tolist()
-    feature["properties"]["leñosos"].sort(key=lambda x: x[1],reverse=True)
+    cultivos = list()
+    cultivos.extend(df_town[["cultivo","Ocupacion"]].values.tolist())
+    cultivos.extend(dl_town[["cultivo","Ocupacion"]].values.tolist())
+    feature["properties"]["cultivos"] = cultivos
+    feature["properties"]["cultivos"].sort(key=lambda x: x[1],reverse=True)
 
 with open("AgroMapa.GeoJson","w") as f:
     json.dump(geojson,f)

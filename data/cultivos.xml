@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<agromapa lang="es">
+    <cultivo id="TRIGO">
+        <wikidata>Q161098</wikidata>
+        <color>yellow</color>
+    </cultivo>
+    <cultivo id="TRIGO DURO">
+        <wikidata>Q161098</wikidata>
+        <color>yellow</color>
+    </cultivo>
+    <cultivo id="TRIGO BLANDO">
+        <wikidata>Q161098</wikidata>
+        <nombre>Trigo Blando</nombre>
+        <color>yellow</color>
+        <descripcion>
+            <![CDATA[
+            El trigo blanco es la variedad de trigo más popular, usado principalmente para la elaboración de pan y otros productos de panadería, aunque también se puede utilizar para elaborar cerveza y pasta.
+            Esta variedad es la más cultivada del mundo (90% de la producción) y se cultiva en las latitudes más altas debido a su gran adaptabilidad.
+            La especie proviene de Asia Occidental y llegó a la península Ibérica en la prehistoria.
+            Durante muchos años, su cultivo ha sido clave para la meseta norte, siendo un cultivo que garantizaba el alimento a los habitantes.
+            Todavía se puede apreciar su importancia en el gran número de cultivos existentes así como los numerosos molinos existentes.]]>
+        </descripcion>
+        <cosecha>Anual</cosecha>
+    </cultivo>
+    <cultivo id="ALFORFÓN O TRIGO SARRACENO">
+        <wikidata>Q161098</wikidata>
+        <color>yellow</color>
+    </cultivo>
+    <cultivo id="ESCAÑA">
+        <wikidata>Q161098</wikidata>
+        <color>yellow</color>
+    </cultivo>
+    <cultivo id="CEBADA">
+        <wikidata>Q11577</wikidata>
+        <color>brown</color>
+    </cultivo>
+    <cultivo id="AVENA">
+        <wikidata>Q12104</wikidata>
+        <color>#eab85d</color>
+    </cultivo>
+    <cultivo id="CENTENO">
+        <wikidata>Q12099</wikidata>
+        <color>#906a24</color>
+    </cultivo>
+    <cultivo id="GARBANZO">
+        <wikidata>Q81375</wikidata>
+        <color>#533c12</color>
+    </cultivo>
+    <cultivo id="GUISANTE SECO">
+        <wikidata>Q25237</wikidata>
+        <color>#21550b</color>
+    </cultivo>
+    <cultivo id="GUISANTE VERDE">
+        <wikidata>Q25237</wikidata>
+        <color>#21550b</color>
+    </cultivo>
+    <cultivo id="HABAS, GUISANTES">
+        <wikidata>Q131342</wikidata>
+        <color>#21550b</color>
+    </cultivo>
+    <cultivo id="Habas, guisantes, altramuces, alhova, algarrobas y otros.">
+        <wikidata>Q131342</wikidata>
+        <color>#21550b</color>
+    </cultivo>
+    <cultivo id="HABAS, GUISANTES, ALTRAMUCES, ALHOVA, ALGARROBAS Y OTROS.">
+        <wikidata>Q131342</wikidata>
+        <color>#21550b</color>
+    </cultivo>
+    <cultivo id="ALHOLVA">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="HABA SECA">
+        <wikidata>Q131342</wikidata>
+        <color>#21550b</color>
+    </cultivo>
+    <cultivo id="HABA VERDE">
+        <wikidata>Q131342</wikidata>
+        <color>#21550b</color>
+    </cultivo>
+    <cultivo id="GIRASOL">
+        <wikidata>Q171497</wikidata>
+        <color>#f49c21</color>
+    </cultivo>
+    <cultivo id="COLZA">
+        <wikidata>Q177932</wikidata>
+        <color>#fdff59</color>
+    </cultivo>
+    <cultivo id="CEREALES PARA FORRAJ">
+        <color>#707115</color>
+    </cultivo>
+    <cultivo id="VEZA PARA FORRAJE">
+        <wikidata>Q157071</wikidata>
+        <wikidata>Q163064</wikidata>
+        <color>#4d8b3b</color>
+    </cultivo>
+    <cultivo id="VEZA">
+        <wikidata>Q157071</wikidata>
+        <wikidata>Q163064</wikidata>
+        <color>#4d8b3b</color>
+    </cultivo>
+    <cultivo id="YERO">
+        <wikidata>Q163064</wikidata>
+        <color>#4d8b3b</color>
+    </cultivo>
+    <cultivo id="ALGARROBA">
+        <wikidata>Q68763</wikidata>
+        <color>#4d8b3b</color>
+    </cultivo>
+    <cultivo id="PATATA TEMPRANA">
+        <wikidata>Q10998</wikidata>
+        <color>#878447</color>
+    </cultivo>
+    <cultivo id="PATATA TARDIA">
+        <wikidata>Q10998</wikidata>
+        <color>#878447</color>
+    </cultivo>
+    <cultivo id="PATATA MED. ESTACION">
+        <wikidata>Q10998</wikidata>
+        <color>#878447</color>
+    </cultivo>
+    <cultivo id="CARDO Y OTROS FORRAJ">
+        <wikidata>Q2700500</wikidata>
+        <wikidata>Q21110</wikidata>
+        <wikidata>Q6051061</wikidata>
+        <wikidata>Q160099</wikidata>
+        <color>#718c79</color>
+    </cultivo>
+    <cultivo id="CARDO">
+        <wikidata>Q2700500</wikidata>
+        <wikidata>Q21110</wikidata>
+        <wikidata>Q6051061</wikidata>
+        <wikidata>Q160099</wikidata>
+        <color>#718c79</color>
+    </cultivo>
+    <cultivo id="COL Y REPOLLO">
+        <wikidata>Q35051</wikidata>
+        <color>#ade2bc</color>
+    </cultivo>
+    <cultivo id="LECHUGA">
+        <wikidata>Q83193</wikidata>
+        <color>#1cf32b</color>
+    </cultivo>
+    <cultivo id="TOMATE">
+        <wikidata>Q23501</wikidata>
+        <color>red</color>
+    </cultivo>
+    <cultivo id="JUDIA VERDE">
+        <wikidata>Q42339</wikidata>
+        <color>#0f7516</color>
+    </cultivo>
+    <cultivo id="JUDIA SECA">
+        <wikidata>Q42339</wikidata>
+        <color>#0f7516</color>
+    </cultivo>
+    <cultivo id="MAIZ FORRAJERO">
+        <wikidata>Q11575</wikidata>
+        <color>#b5df00</color>
+    </cultivo>
+    <cultivo id="MAIZ">
+        <wikidata>Q11575</wikidata>
+        <color>#b5df00</color>
+    </cultivo>
+    <cultivo id="MAÍZ DULCE">
+        <wikidata>Q11575</wikidata>
+        <color>#b5df00</color>
+    </cultivo>
+    <cultivo id="REMOLACHA AZUCARERA">
+        <wikidata>Q165191</wikidata>
+        <color>#214eca</color>
+    </cultivo>
+    <cultivo id="REMOLACHA DE MESA">
+        <wikidata>Q165191</wikidata>
+        <color>#214eca</color>
+    </cultivo>
+    <cultivo id="REMOLACHA FORRAJERA">
+        <wikidata>Q165191</wikidata>
+        <color>#214eca</color>
+    </cultivo>
+    <cultivo id="ACELGA">
+        <wikidata>Q165191</wikidata>
+        <color>#214eca</color>
+    </cultivo>
+    <cultivo id="CEBOLLA">
+        <wikidata>Q23485</wikidata>
+        <color>#8f8f8f</color>
+    </cultivo>
+    <cultivo id="PIMIENTO">
+        <wikidata>Q1380</wikidata>
+        <wikidata>Q133428</wikidata>
+        <color>#c26800</color>
+    </cultivo>
+    <cultivo id="PIM. PARA PIMENTON">
+        <wikidata>Q1380</wikidata>
+        <wikidata>Q133428</wikidata>
+        <color>#c26800</color>
+    </cultivo>
+    <cultivo id="GUINDILLA">
+        <wikidata>Q1380</wikidata>
+        <wikidata>Q133428</wikidata>
+        <color>#c26800</color>
+    </cultivo>
+    <cultivo id="CEBOLLETA">
+        <wikidata>Q27938</wikidata>
+        <color>#a3c4b0</color>
+    </cultivo>
+    <cultivo id="TRITICALE">
+        <wikidata>Q380329</wikidata>
+        <color>#b2ac38</color>
+    </cultivo>
+    <cultivo id="ALFALFA">
+        <wikidata>Q156106</wikidata>
+        <color>#4b4a2a</color>
+    </cultivo>
+    <cultivo id="PRADERAS POLIFITAS">
+        <color>green</color>
+    </cultivo>
+    <cultivo id="SANDIA">
+        <wikidata>Q17507129</wikidata>
+        <color>#fb4343</color>
+    </cultivo>
+    <cultivo id="MELON">
+        <wikidata>Q81602</wikidata>
+        <color>#4afb43</color>
+    </cultivo>
+    <cultivo id="LENTEJA">
+        <wikidata>Q131226</wikidata>
+        <color>#48270c</color>
+    </cultivo>
+    <cultivo id="FRESA Y FRESON">
+        <wikidata>Q13158</wikidata>
+        <color>#b72a2a</color>
+    </cultivo>
+    <cultivo id="ZANAHORIA">
+        <wikidata>Q30056</wikidata>
+        <color>orange</color>
+    </cultivo>
+    <cultivo id="ZANAHORIA FORRAJERA">
+        <wikidata>Q30056</wikidata>
+        <color>orange</color>
+    </cultivo>
+    <cultivo id="OTRAS HORTALIZAS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="AJO">
+        <wikidata>Q23400</wikidata>
+        <color>#b6c2c2</color>
+    </cultivo>
+    <cultivo id="CALABAZA">
+        <wikidata>Q1277255</wikidata>
+        <color>orange</color>
+    </cultivo>
+    <cultivo id="CALABAZA FORRAJERA">
+        <wikidata>Q1277255</wikidata>
+        <color>orange</color>
+    </cultivo>
+    <cultivo id="OTRAS LEGUMINOSAS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="SORGO">
+        <wikidata>Q332062</wikidata>
+        <color>#e3ff7a</color>
+    </cultivo>
+    <cultivo id="SORGO FORRAJERO">
+        <wikidata>Q332062</wikidata>
+        <color>#e3ff7a</color>
+    </cultivo>
+    <cultivo id="TABACO">
+        <wikidata>Q181095</wikidata>
+        <color>#4b200d</color>
+    </cultivo>
+    <cultivo id="TREBOL">
+        <wikidata>Q158179</wikidata>
+        <color>#40ac4a</color>
+    </cultivo>
+    <cultivo id="NABO FORRAJERO">
+        <wikidata>Q3384</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="NABO Y OTRAS">
+        <wikidata>Q3384</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ESPARRAGO">
+        <wikidata>Q28367</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="PEPINO">
+        <wikidata>Q23425</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="PEPINILLO">
+        <wikidata>Q23425</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="BERENJENA">
+        <wikidata>Q7540</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="COLIFLOR">
+        <wikidata>Q146212</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="BERZA">
+        <wikidata>Q146212</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="BRÓCOLI">
+        <wikidata>Q146212</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="PUERRO">
+        <wikidata>Q148995</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="VALLICO">
+        <wikidata>Q161722</wikidata>
+        <color>green</color>
+    </cultivo>
+    <cultivo id="OTRAS GRAMINEAS">
+        <color>green</color>
+    </cultivo>
+    <cultivo id="OTROS CEREALES">
+        <color>yellow</color>
+    </cultivo>
+    <cultivo id="BATATA Y BONIATO">
+        <wikidata>Q37937</wikidata>
+        <color>#a2731b</color>
+    </cultivo>
+    <cultivo id="BONIATO">
+        <wikidata>Q37937</wikidata>
+        <color>#a2731b</color>
+    </cultivo>
+    <cultivo id="ENDIVIA Y OTRAS">
+        <wikidata>Q178547</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ENDIVIA">
+        <wikidata>Q178547</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ACHICORIA VERDE,ENDIVIA,BORRAJA Y OTRAS">
+        <wikidata>Q178547</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ACHICORIA VERDE">
+        <wikidata>Q178547</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ALTRAMUZ">
+        <wikidata>Q161372</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ESCAROLA">
+        <wikidata>Q2544599</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ACHICORIA (RAIZ)">
+        <wikidata>Q2544599</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ESPINACA">
+        <wikidata>Q81464</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ESPARCETA">
+        <wikidata>Q157933</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="OTROS C.INDUSTRIALES">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="CARTAMO">
+        <wikidata>Q156625</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="LAVANDA Y LAVANDIN">
+        <wikidata>Q42081</wikidata>
+        <color>purple</color>
+    </cultivo>
+    <cultivo id="ALCACHOFA">
+        <wikidata>Q134609</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="SOJA">
+        <wikidata>Q11006</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="LUPULO">
+        <wikidata>Q104212</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="MENTA">
+        <wikidata>Q156037</wikidata>
+        <color>#49c64a</color>
+    </cultivo>
+    <cultivo id="OTRAS FLORES">
+        <color>#49c64a</color>
+    </cultivo>
+    <cultivo id="LINO OLEAGINOSO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ALPISTE">
+        <wikidata>Q2086586</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ZULLA">
+        <wikidata>Q140892</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="RABANO">
+        <wikidata>Q7224565</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ALMORTA">
+        <wikidata>Q162093</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="COMINO, REG Y OTROS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="MIJO Y PANIZO">
+        <wikidata>Q654332</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="MIJO">
+        <wikidata>Q654332</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="TRANQUILLON, ESCAÑA Y OTROS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="CALABACÍN">
+        <wikidata>Q7229863</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="TRANQUILLON">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="PATACA,CHIR Y OTROS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="APIO">
+        <wikidata>Q28298</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="AZAFRAN">
+        <wikidata>Q15041677</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="PLANTAS ORNAMENTALES">
+        <color>pink</color>
+    </cultivo>
+    <cultivo id="CAÑAMO TEXTIL">
+        <color>grey</color>
+    </cultivo>
+    <cultivo id="CANÓNIGOS">
+        <wikidata>Q158954</wikidata>
+        <color>green</color>
+    </cultivo>
+    <cultivo id="RÚCULA">
+        <wikidata>Q156884</wikidata>
+        <color>green</color>
+    </cultivo>
+    <cultivo id="OTRAS SETAS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="PEREJIL">
+        <wikidata>Q25284</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="GRELOS">
+        <color>green</color>
+    </cultivo>
+    <cultivo id="CAMELINA">
+        <wikidata>Q163958</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="QUINOA">
+        <wikidata>Q139925</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="OTRAS MEZCLAS CEREALES DE INVIERNO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ANIS">
+        <wikidata>Q28692</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="BALLICO">
+        <wikidata>Q161722</wikidata>
+        <color>green</color>
+    </cultivo>
+    <cultivo id="ROSA">
+        <color>pink</color>
+    </cultivo>
+    <!-- Leñosos -->
+    <cultivo id="VIÑEDO DE UVA VINO">
+        <wikidata>Q30046</wikidata>
+        <color>#be21bd</color>
+    </cultivo>
+    <cultivo id="VIÑEDO DE UVA MESA">
+        <wikidata>Q30046</wikidata>
+        <color>#be21bd</color>
+    </cultivo>
+    <cultivo id="VIÑEDO DE UVA PASAS Y VIVEROS">
+        <wikidata>Q30046</wikidata>
+        <color>#be21bd</color>
+    </cultivo>
+    <cultivo id="VIÑEDO DE UVA PASAS">
+        <wikidata>Q30046</wikidata>
+        <color>#be21bd</color>
+    </cultivo>
+    <cultivo id="OLI ACEITUNA ACEITE">
+        <wikidata>Q37083</wikidata>
+        <color>olive</color>
+    </cultivo>
+    <cultivo id="OLIVAR ACEIUNA MESA">
+        <wikidata>Q37083</wikidata>
+        <color>olive</color>
+    </cultivo>
+    <cultivo id="CEREZO Y GUINDO">
+        <wikidata>Q165137</wikidata>
+        <color>#df93b7</color>
+    </cultivo>
+    <cultivo id="MANZANO">
+        <wikidata>Q18674606</wikidata>
+        <color>#d00e0e</color>
+    </cultivo>
+    <cultivo id="PERAL">
+        <wikidata>Q146281</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="MELOCOTONERO">
+        <wikidata>Q13189</wikidata>
+        <color>#fc8533</color>
+    </cultivo>
+    <cultivo id="CIRUELO">
+        <wikidata>Q44120</wikidata>
+        <color>#fc8533</color>
+    </cultivo>
+    <cultivo id="HIGUERA">
+        <wikidata>Q36146</wikidata>
+        <color>white</color>
+    </cultivo>
+    <cultivo id="MORERA Y OTROS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="AZUFUAIFO Y OTROS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ALMENDRO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="VIVEROS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="CHIRIMOYO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ALBARICOQUERO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="NOGAL">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="MEMBRILLO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="MIMBRERO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="NARANJO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ACEROLO Y OTROS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="AVELLANO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="CASTAÑO FRUTO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="PISTACHO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="FRAMBUESO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="AZUFUAIFO,GUAYABO,KAKI,FRAMBUESO Y OTROS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="AZUFUAIFO,GUAYABO,KAKI Y OTROS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="ARÁNDANO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="AZUFAIFO, GUAYABO Y OTROS CARNOSOS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="GROSELLERO">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="OTROS">
+        <color>white</color>
+    </cultivo>
+    <cultivo id="OTRAS BAYAS">
+        <color>white</color>
+    </cultivo>
+</agromapa>

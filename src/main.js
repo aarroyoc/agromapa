@@ -53,8 +53,13 @@ function setup(){
         main(svg,data[0],data[1]);
     });
 
-    d3.selectAll(".close").on("click",()=>{
+    d3.selectAll(".close-right").on("click",()=>{
         d3.select("#infopanel").classed("infopanel-show",false);
+    });
+
+    d3.selectAll(".close-left").on("click",()=>{
+        d3.select("#infopanel-left-cultivos").classed("infopanel-left-show",false);
+        d3.select("#infopanel-left-cultivo").classed("infopanel-left-show",false);
     });
     
 
@@ -147,6 +152,65 @@ function main(svg,mapData,cultivos){
                 data.properties.cultivos.length*20);
             infopanel.classed("infopanel-show",true);
         });
+
+    // PANEL LISTADO CULTIVOS
+    let xpath = cultivos.evaluate("/agromapa/cultivo",cultivos,null,XPathResult.ANY_TYPE,null);
+    let node, nodes = []
+    while (node = xpath.iterateNext()){
+        nodes.push(node);
+    }
+    d3.select("#list-cultivos").selectAll(".cultivo")
+        .data(nodes)
+        .enter()
+        .append("p")
+        .classed("cultivo",true)
+        .text((data)=>{ return data.attributes.id.textContent })
+        .on("click",(data)=>{
+            let wikidata = data.getElementsByTagName("wikidata");
+            if(wikidata.length > 0){
+                const query = `SELECT ?scientific ?imagen ?article WHERE {
+                    BIND(wd:${wikidata[0].textContent} AS ?id)
+                    ?id wdt:P18 ?imagen.
+                    ?id wdt:P225 ?scientific.
+                    OPTIONAL {
+                        ?article schema:about ?id .
+                        ?article schema:inLanguage "es" .
+                    }
+                }`;
+                queryDispatcher.query( query ).then( r => {
+                    let scientific = r.results.bindings[0].scientific.value;
+                    let imagen = r.results.bindings[0].imagen.value;
+                    d3.select("#cientifico").text(scientific);
+                    d3.select("#cultivo-imagen").style(`background-image`,`url('${imagen}')`);
+
+                    let urlSet = new Set();
+                    for(let i=0;i<r.results.bindings.length;i++){
+                        if(r.results.bindings[i].article != undefined){
+                            let article = r.results.bindings[i].article.value;
+                            if(urlSet.has(article)){
+                                continue;
+                            }
+                            urlSet.add(article);
+
+                            d3.select("#links-cultivo")
+                                .append("li")
+                                .append("a")
+                                .attr("href",article)
+                                .text(article);
+                        }
+                    }
+                } );
+
+
+            }
+            d3.select("#infopanel-left-cultivos").classed("infopanel-left-show",false);
+            let panel = d3.select("#infopanel-left-cultivo");
+            panel.classed("infopanel-left-show",true);
+            d3.select("#cultivo").text(data.attributes.id.textContent);
+        });
+    
+    // a.children.item("wikidata").textContent
+    
 }
 
 function infocultivo(data,width,height){

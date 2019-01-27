@@ -13,8 +13,8 @@
         <h1 id="title">Agromapa de Castilla y León</h1>
         <div id="infopanel">
             <div class="infoheader">
-                <div class="close">✖️</div>
-                <h1>Información</h1>
+                <div class="close-right">✖️</div>
+                <h1>Municipio</h1>
             </div>
             <div id="infoimage"></div>
             <div id="content">
@@ -22,6 +22,30 @@
                 <p>Provincia: <span id="infoprovincia"></span></p>
             </div>
             <div id="infocultivos"></div>
+        </div>
+        <div id="infopanel-left-cultivos" class="infopanel-left-show">
+            <div class="infoheader">
+                <h1>Cultivos</h1>
+                <div class="close-left">✖️</div>
+            </div>
+            <div id="list-cultivos">
+
+            </div>
+        </div>
+        <div id="infopanel-left-cultivo">
+            <div class="infoheader">
+                <h1>Cultivo</h1>
+                <div class="close-left">✖️</div>
+            </div>
+            <div id="cultivo-imagen"></div>
+            <div style="margin: 15px">
+                <h2 id="cultivo"></h2>
+                <h4 id="cientifico"></h4>
+                Más información acerca del cultivo:
+                <ul id="links-cultivo">
+
+                </ul>
+            </div>
         </div>
         <div id="credits">&copy; Adrián Arroyo Calle 2019. Fuente datos: <a href="https://datosabiertos.jcyl.es">Datos Abiertos JCyL</a> - <a href="https://wambachers-osm.website/boundaries/">OpenStreetMap</a> - <a href="https://es.wikipedia.org">Wikipedia</a></div>
     </body>

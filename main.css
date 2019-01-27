@@ -40,11 +40,34 @@ body, #map{
     max-width: 30vw;
 }
 
+#infopanel-left-cultivos, #infopanel-left-cultivo{
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    background-color: white;
+    height: 100vh;
+    transition: 1s;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: initial;
+}
+.infopanel-left-show{
+    transition: 1s;
+    left: 0vw !important;
+    width: 30vw;
+    max-width: 30vw;
+}
+#list-cultivos{
+    margin: 15px;
+    overflow-y: scroll;
+}
+
 #infopanel > p {
     text-align: justify;
 }
 
-.close{
+.close-right, .close-left{
     border: solid black;
     width: 25pt;
     height: 25pt;
@@ -67,7 +90,7 @@ body, #map{
     display: flex;
     flex-direction: column;
 }
-#infoimage{
+#infoimage, #cultivo-imagen{
     min-height: 25vh;
     background-size: cover;
     background-position: center;

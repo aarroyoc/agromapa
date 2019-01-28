@@ -71,16 +71,27 @@ function main(svg,mapData,cultivos){
         .fitExtent([[0,50],[WIDTH,HEIGHT-50]],mapData);
     let geoPath = d3.geoPath(projection);
 
-    let zoom = d3.zoom().on("zoom",zoomed);
+    let zoom = d3.zoom()
+        .scaleExtent([1,10])
+        .translateExtent([[0,0],[window.innerWidth,window.innerHeight]])
+        .on("zoom",zoomed);
     let map = svg
         .append("g")
         .call(zoom);
     
-    
 
+    let showText = false;
     function zoomed(){
         let transform = d3.event.transform;
+        if(transform.k > 9 && !showText){
+            map.selectAll(".label").style("display","initial");
+            showText = true;
+        }else if(transform.k < 9 && showText){
+            map.selectAll(".label").style("display","none");
+            showText = false;
+        }
         map.selectAll(".country").attr("transform",transform.toString());
+        map.selectAll(".label").attr("transform",transform.toString());
     }
 
     function fillMap(data){
@@ -137,6 +148,22 @@ function main(svg,mapData,cultivos){
             if (d3.event.defaultPrevented) return;
             showMunicipio(data);
         });
+    
+    map.selectAll(".label")
+        .data(features)
+        .enter()
+        .append("text")
+        .classed("label",true)
+        .attr('x', function(d) {
+            return geoPath.centroid(d)[0];
+        })
+        .attr("y",function(d){
+            return geoPath.centroid(d)[1];
+        })
+        .style("font-size","1pt")
+        .style("display","none")
+        .attr("text-anchor","middle")
+        .text((data) => {return data.properties.localname});
 
     // PANEL LISTADO CULTIVOS
     let xpath = cultivos.evaluate("/agromapa/cultivo",cultivos,null,XPathResult.ANY_TYPE,null);

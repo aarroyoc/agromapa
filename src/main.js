@@ -27,14 +27,19 @@ function setup(){
         .attr("x","50%")
         .attr("y","50%")
         .attr("text-anchor","middle")
-        .text("Cargando... 0%");
+        .text("Cargando");
     
     let mapPromise = new Promise((resolve,reject)=>{
+        let t = ".";
         let xhr = new XMLHttpRequest();
         xhr.open("GET","/data/AgroMapa.GeoJson",true);
         xhr.onprogress = (event) => {
-            console.log(event.total);
-            loadingText.text(`Cargando... ${Math.floor(100*event.loaded/event.total)}%`);
+            console.log(`Cargando... ${Math.floor(100*event.loaded/event.total)}%`);
+            loadingText.text(`Cargando${t}`);
+            t+=".";
+            if(t.length==3){
+                t="";
+            }
         };
         xhr.onload = () => {
             resolve(JSON.parse(xhr.responseText));

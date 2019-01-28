@@ -62,6 +62,9 @@ body, #map{
     margin: 15px;
     overflow-y: scroll;
 }
+#list-cultivos > p, #list-municipios > p{
+    cursor: pointer;
+}
 
 #infopanel > p {
     text-align: justify;

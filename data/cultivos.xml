@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <agromapa lang="es">
-    <cultivo id="TRIGO">
+    <!-- <cultivo id="TRIGO">
         <wikidata>Q161098</wikidata>
         <color>yellow</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="TRIGO DURO">
         <wikidata>Q161098</wikidata>
         <color>yellow</color>
@@ -26,10 +26,10 @@
         <wikidata>Q161098</wikidata>
         <color>yellow</color>
     </cultivo>
-    <cultivo id="ESCAÑA">
+    <!-- <cultivo id="ESCAÑA">
         <wikidata>Q161098</wikidata>
         <color>yellow</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="CEBADA">
         <wikidata>Q11577</wikidata>
         <color>brown</color>
@@ -54,6 +54,7 @@
         <wikidata>Q25237</wikidata>
         <color>#21550b</color>
     </cultivo>
+    <!-- 
     <cultivo id="HABAS, GUISANTES">
         <wikidata>Q131342</wikidata>
         <color>#21550b</color>
@@ -61,14 +62,14 @@
     <cultivo id="Habas, guisantes, altramuces, alhova, algarrobas y otros.">
         <wikidata>Q131342</wikidata>
         <color>#21550b</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="HABAS, GUISANTES, ALTRAMUCES, ALHOVA, ALGARROBAS Y OTROS.">
         <wikidata>Q131342</wikidata>
         <color>#21550b</color>
     </cultivo>
-    <cultivo id="ALHOLVA">
+    <!-- <cultivo id="ALHOLVA">
         <color>white</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="HABA SECA">
         <wikidata>Q131342</wikidata>
         <color>#21550b</color>
@@ -118,13 +119,13 @@
         <wikidata>Q10998</wikidata>
         <color>#878447</color>
     </cultivo>
-    <cultivo id="CARDO Y OTROS FORRAJ">
+    <!-- <cultivo id="CARDO Y OTROS FORRAJ">
         <wikidata>Q2700500</wikidata>
         <wikidata>Q21110</wikidata>
         <wikidata>Q6051061</wikidata>
         <wikidata>Q160099</wikidata>
         <color>#718c79</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="CARDO">
         <wikidata>Q2700500</wikidata>
         <wikidata>Q21110</wikidata>
@@ -194,11 +195,11 @@
         <wikidata>Q133428</wikidata>
         <color>#c26800</color>
     </cultivo>
-    <cultivo id="GUINDILLA">
+    <!-- <cultivo id="GUINDILLA">
         <wikidata>Q1380</wikidata>
         <wikidata>Q133428</wikidata>
         <color>#c26800</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="CEBOLLETA">
         <wikidata>Q27938</wikidata>
         <color>#a3c4b0</color>
@@ -234,10 +235,10 @@
         <wikidata>Q30056</wikidata>
         <color>orange</color>
     </cultivo>
-    <cultivo id="ZANAHORIA FORRAJERA">
+    <!-- <cultivo id="ZANAHORIA FORRAJERA">
         <wikidata>Q30056</wikidata>
         <color>orange</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="OTRAS HORTALIZAS">
         <color>white</color>
     </cultivo>
@@ -322,10 +323,10 @@
     <cultivo id="OTROS CEREALES">
         <color>yellow</color>
     </cultivo>
-    <cultivo id="BATATA Y BONIATO">
+    <!-- <cultivo id="BATATA Y BONIATO">
         <wikidata>Q37937</wikidata>
         <color>#a2731b</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="BONIATO">
         <wikidata>Q37937</wikidata>
         <color>#a2731b</color>
@@ -418,17 +419,17 @@
     <cultivo id="COMINO, REG Y OTROS">
         <color>white</color>
     </cultivo>
-    <cultivo id="MIJO Y PANIZO">
+    <!-- <cultivo id="MIJO Y PANIZO">
         <wikidata>Q654332</wikidata>
         <color>white</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="MIJO">
         <wikidata>Q654332</wikidata>
         <color>white</color>
     </cultivo>
-    <cultivo id="TRANQUILLON, ESCAÑA Y OTROS">
+    <!-- <cultivo id="TRANQUILLON, ESCAÑA Y OTROS">
         <color>white</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="CALABACÍN">
         <wikidata>Q7229863</wikidata>
         <color>white</color>
@@ -436,23 +437,23 @@
     <cultivo id="TRANQUILLON">
         <color>white</color>
     </cultivo>
-    <cultivo id="PATACA,CHIR Y OTROS">
+    <!-- <cultivo id="PATACA,CHIR Y OTROS">
         <color>white</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="APIO">
         <wikidata>Q28298</wikidata>
         <color>white</color>
     </cultivo>
-    <cultivo id="AZAFRAN">
+    <!-- <cultivo id="AZAFRAN">
         <wikidata>Q15041677</wikidata>
         <color>white</color>
-    </cultivo>
+    </cultivo> 
     <cultivo id="PLANTAS ORNAMENTALES">
         <color>pink</color>
-    </cultivo>
+    </cultivo> 
     <cultivo id="CAÑAMO TEXTIL">
         <color>grey</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="CANÓNIGOS">
         <wikidata>Q158954</wikidata>
         <color>green</color>
@@ -502,10 +503,10 @@
         <wikidata>Q30046</wikidata>
         <color>#be21bd</color>
     </cultivo>
-    <cultivo id="VIÑEDO DE UVA PASAS Y VIVEROS">
+    <!-- <cultivo id="VIÑEDO DE UVA PASAS Y VIVEROS">
         <wikidata>Q30046</wikidata>
         <color>#be21bd</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="VIÑEDO DE UVA PASAS">
         <wikidata>Q30046</wikidata>
         <color>#be21bd</color>
@@ -542,28 +543,30 @@
         <wikidata>Q36146</wikidata>
         <color>white</color>
     </cultivo>
-    <cultivo id="MORERA Y OTROS">
+    <!-- <cultivo id="MORERA Y OTROS">
         <color>white</color>
     </cultivo>
     <cultivo id="AZUFUAIFO Y OTROS">
         <color>white</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="ALMENDRO">
         <color>white</color>
     </cultivo>
     <cultivo id="VIVEROS">
         <color>white</color>
     </cultivo>
-    <cultivo id="CHIRIMOYO">
+    <!-- <cultivo id="CHIRIMOYO">
         <color>white</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="ALBARICOQUERO">
         <color>white</color>
     </cultivo>
     <cultivo id="NOGAL">
+        <wikidata>Q46871</wikidata>
         <color>white</color>
     </cultivo>
     <cultivo id="MEMBRILLO">
+        <wikidata>Q43300</wikidata>
         <color>white</color>
     </cultivo>
     <cultivo id="MIMBRERO">
@@ -572,9 +575,10 @@
     <cultivo id="NARANJO">
         <color>white</color>
     </cultivo>
+    <!--
     <cultivo id="ACEROLO Y OTROS">
         <color>white</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="AVELLANO">
         <color>white</color>
     </cultivo>
@@ -582,17 +586,19 @@
         <color>white</color>
     </cultivo>
     <cultivo id="PISTACHO">
+        <wikidata>Q36071</wikidata>
         <color>white</color>
     </cultivo>
     <cultivo id="FRAMBUESO">
         <color>white</color>
     </cultivo>
+    <!--
     <cultivo id="AZUFUAIFO,GUAYABO,KAKI,FRAMBUESO Y OTROS">
         <color>white</color>
     </cultivo>
     <cultivo id="AZUFUAIFO,GUAYABO,KAKI Y OTROS">
         <color>white</color>
-    </cultivo>
+    </cultivo> -->
     <cultivo id="ARÁNDANO">
         <color>white</color>
     </cultivo>

@@ -144,6 +144,7 @@ function main(svg,mapData,cultivos){
         .enter()
         .append("path")
         .attr("class","country")
+        .attr("vector-effect", "non-scaling-stroke")
         .attr("d",geoPath)
         .style("stroke","black")
         .style("fill",fillMap)
@@ -186,9 +187,18 @@ function main(svg,mapData,cultivos){
         .enter()
         .append("p")
         .classed("cultivo",true)
-        .text((data)=>{ return data.attributes.id.textContent })
+        .style("display","flex")
+        .html((data)=>{
+            let color = data.getElementsByTagName("color")[0].textContent;
+            return `<div style="background-color: ${color};width: 2rem;height: 1rem;margin-right: 1rem;"></div> ${data.attributes.id.textContent}` 
+        })
         .on("click",(data)=>{
             let wikidata = data.getElementsByTagName("wikidata");
+
+            d3.select("#cientifico").text("");
+            d3.select("#cultivo-imagen").style("background-image","linear-gradient(grey,white)");
+            d3.select("#links-cultivo").html("");
+
             if(wikidata.length > 0){
                 const query = `SELECT ?scientific ?imagen ?article WHERE {
                     BIND(wd:${wikidata[0].textContent} AS ?id)
@@ -204,7 +214,6 @@ function main(svg,mapData,cultivos){
                     let imagen = r.results.bindings[0].imagen.value;
                     d3.select("#cientifico").text(scientific);
                     d3.select("#cultivo-imagen").style(`background-image`,`url('${imagen}')`);
-                    d3.select("#links-cultivo").html("");
 
                     let urlSet = new Set();
                     for(let i=0;i<r.results.bindings.length;i++){
@@ -223,7 +232,6 @@ function main(svg,mapData,cultivos){
                         }
                     }
                 } );
-
 
             }
             d3.select("#infopanel-left-cultivos").classed("infopanel-left-show",false);
@@ -299,6 +307,15 @@ function infocultivo(data,width,height){
         .classed("grafico-actual",true)
         .attr("width",width)
         .attr("height",height);
+    if(data.length == 0){
+        svg
+            .append("text")
+            .attr("x",width/2)
+            .attr("y",height/2)
+            .attr("text-anchor","middle")
+            .text("No existen cultivos en este municipio");
+        return;
+    }
 
     let x = d3
         .scaleLinear()
@@ -326,8 +343,6 @@ function infocultivo(data,width,height){
 		.attr("y",(d) => { return y(d[0]); })
 		.attr("height",y.bandwidth)
 		.attr("fill",(d) => { return "blue"; })
-
-    console.log("D3 segundo gráfico");
 }
 
 window.addEventListener("load",setup);

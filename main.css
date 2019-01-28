@@ -10,8 +10,13 @@ body, #map{
     top: -0.5em;
     width: 100%;
     text-align: center;
+}
+#background-title{
+    position: fixed;
     background-color: rgba(255,255,255,0.7);
-    /*font-family: "Staatliches", cursive;*/
+    height: 52px;
+    top: 0;
+    width: 100vw;
 }
 #credits{
     width: 100%;
@@ -71,10 +76,11 @@ body, #map{
 }
 
 .close-right, .close-left{
-    border: solid black;
     width: 25pt;
     height: 25pt;
     font-size: 22pt;
+    background-image: url('data/close.png');
+    background-size: contain;
     text-align: center;
 }
 
@@ -94,7 +100,7 @@ body, #map{
     flex-direction: column;
 }
 #infoimage, #cultivo-imagen{
-    min-height: 25vh;
+    min-height: 35vh;
     background-size: cover;
     background-position: center;
 }

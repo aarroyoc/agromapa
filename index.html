@@ -12,12 +12,17 @@
         <div id="map"></div>
         <div id="background-title"></div>
         <h1 id="title">Agromapa de Castilla y León</h1>
+        <div id="zoom">
+            <div id="zoom-more">+</div>
+            <div id="zoom-less">-</div>
+        </div>
         <img id="icon-house" src="data/house.png" width="48" height="48">
         <div id="infopanel-right-municipios">
             <div class="infoheader">
                 <div class="close-right"></div>
                 <h1>Municipios</h1>
             </div>
+            <input value="" type="search" placeholder="Buscar municipio..." id="search-municipio">
             <div id="list-municipios">
 
             </div>
@@ -61,6 +66,7 @@
                 </ul>
             </div>
         </div>
+
         <div id="credits">&copy; Adrián Arroyo Calle 2019. Fuente datos: <a href="https://datosabiertos.jcyl.es">Datos Abiertos JCyL</a> - <a href="https://wambachers-osm.website/boundaries/">OpenStreetMap</a> - <a href="https://es.wikipedia.org">Wikipedia</a></div>
     </body>
 </html>

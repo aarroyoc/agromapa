@@ -16,6 +16,10 @@ class SPARQLQueryDispatcher {
 const endpointUrl = 'https://query.wikidata.org/sparql';
 const queryDispatcher = new SPARQLQueryDispatcher( endpointUrl );
 
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
+}
+
 function setup(){
     let svg = d3.select("#map")
         .append("svg")
@@ -86,6 +90,12 @@ function main(svg,mapData,cultivos){
         .call(zoom);
     
 
+    d3.select("#zoom-more").on("click",()=>{
+        zoom.scaleBy(map,1.2);
+    });
+    d3.select("#zoom-less").on("click",()=>{
+        zoom.scaleBy(map,0.8);
+    });
     let showText = false;
     function zoomed(){
         let transform = d3.event.transform;
@@ -274,16 +284,36 @@ function main(svg,mapData,cultivos){
         });
     
     // PANEL LISTADO MUNICIPIOS
-    d3.select("#list-municipios")
-        .selectAll(".municipio")
-        .data(features)
-        .enter()
-        .append("p")
-        .classed("municipio",true)
-        .text((data) => { return data.properties.localname})
-        .on("click",(data)=>{
-            d3.select("#infopanel-right-municipios").classed("infopanel-right-show",false);
-            showMunicipio(data);
+    function createPanel(feat){
+        let join = d3.select("#list-municipios")
+            .selectAll(".municipio")
+            .data(feat);
+
+        join
+            .enter()
+            .append("p")
+            .classed("municipio",true)
+            .on("click",(data)=>{
+                d3.select("#infopanel-right-municipios").classed("infopanel-right-show",false);
+                showMunicipio(data);
+            })
+            .merge(join)
+            .text((data) => { return data.properties.localname});
+    }
+    createPanel(features);
+
+    d3.select("#search-municipio")
+        .on("input",(i)=>{
+            let search = d3.select("#search-municipio").property("value");
+            search = search.capitalize();
+            let searchResults = features.filter((town)=>{
+                return town.properties.localname.includes(search);
+            })
+            d3.selectAll(".municipio")
+                .data(searchResults)
+                .exit()
+                .remove();
+            createPanel(searchResults);
         });
     d3.selectAll(".close-left").on("click",()=>{
         d3.select("#infopanel-left-cultivos").classed("infopanel-left-show",false);

@@ -123,3 +123,24 @@ body, #map{
     left: 0;
     border: solid black;
 }
+
+#zoom{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+}
+#zoom-more, #zoom-less{
+    border: solid black;
+    width: 1em;
+    height: 1em;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}

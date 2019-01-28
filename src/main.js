@@ -37,7 +37,7 @@ function setup(){
             console.log(`Cargando... ${Math.floor(100*event.loaded/event.total)}%`);
             loadingText.text(`Cargando${t}`);
             t+=".";
-            if(t.length==3){
+            if(t.length==4){
                 t="";
             }
         };
@@ -169,7 +169,11 @@ function main(svg,mapData,cultivos){
         .style("font-size","1pt")
         .style("display","none")
         .attr("text-anchor","middle")
-        .text((data) => {return data.properties.localname});
+        .text((data) => {return data.properties.localname})
+        .on("click",(data)=>{
+            if (d3.event.defaultPrevented) return;
+            showMunicipio(data);
+        });
 
     // PANEL LISTADO CULTIVOS
     let xpath = cultivos.evaluate("/agromapa/cultivo",cultivos,null,XPathResult.ANY_TYPE,null);
@@ -248,7 +252,13 @@ function main(svg,mapData,cultivos){
                         }
                     });
                     if(cultivo.length > 0){
-                        return "green";
+                        let res = cultivos.evaluate(`/agromapa/cultivo[@id='${data.attributes.id.textContent}']/color/text()`,cultivos,null,XPathResult.ANY_TYPE,null);
+                        let color = res.iterateNext().data;
+                        if(color == "white")
+                            return "green";
+                        else
+                            return color;
+
                     }else{
                         return "white";
                     }

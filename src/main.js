@@ -33,6 +33,7 @@ function setup(){
         let xhr = new XMLHttpRequest();
         xhr.open("GET","/data/AgroMapa.GeoJson",true);
         xhr.onprogress = (event) => {
+            console.log(event.total);
             loadingText.text(`Cargando... ${Math.floor(100*event.loaded/event.total)}%`);
         };
         xhr.onload = () => {

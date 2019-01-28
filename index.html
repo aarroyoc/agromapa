@@ -11,7 +11,17 @@
     <body>
         <div id="map"></div>
         <h1 id="title">Agromapa de Castilla y León</h1>
-        <div id="infopanel">
+        <img id="icon-house" src="data/house.png" width="48" height="48">
+        <div id="infopanel-right-municipios">
+            <div class="infoheader">
+                <div class="close-right">✖️</div>
+                <h1>Municipios</h1>
+            </div>
+            <div id="list-municipios">
+
+            </div>
+        </div>
+        <div id="infopanel-right-municipio">
             <div class="infoheader">
                 <div class="close-right">✖️</div>
                 <h1>Municipio</h1>
@@ -23,7 +33,8 @@
             </div>
             <div id="infocultivos"></div>
         </div>
-        <div id="infopanel-left-cultivos" class="infopanel-left-show">
+        <img id="icon-wheat" src="data/wheat.png" width="48" height="48">
+        <div id="infopanel-left-cultivos">
             <div class="infoheader">
                 <h1>Cultivos</h1>
                 <div class="close-left">✖️</div>
@@ -41,6 +52,8 @@
             <div style="margin: 15px">
                 <h2 id="cultivo"></h2>
                 <h4 id="cientifico"></h4>
+                <p>Hectáreas cultivadas: <span id="ha-cultivadas"></span></p>
+                <p>Municipios donde se cultiva marcados de verde en el mapa</p>
                 Más información acerca del cultivo:
                 <ul id="links-cultivo">
 

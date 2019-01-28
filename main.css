@@ -21,7 +21,7 @@ body, #map{
     font-size: 0.75em;
 }
 
-#infopanel{
+#infopanel-right-municipio, #infopanel-right-municipios{
     position: fixed;
     top: 0;
     right: -100vw;
@@ -33,7 +33,7 @@ body, #map{
     flex-direction: column;
     overflow-y: initial;
 }
-.infopanel-show{
+.infopanel-right-show{
     transition: 1s;
     right: 0vw !important;
     width: 30vw;
@@ -58,7 +58,7 @@ body, #map{
     width: 30vw;
     max-width: 30vw;
 }
-#list-cultivos{
+#list-cultivos, #list-municipios{
     margin: 15px;
     overflow-y: scroll;
 }
@@ -100,4 +100,17 @@ body, #map{
     margin: 15px;
     overflow-y: scroll;
     width: calc(100% - 30px);
+}
+
+#icon-house{
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: solid black;
+}
+#icon-wheat{
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: solid black;
 }

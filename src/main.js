@@ -53,37 +53,16 @@ function setup(){
         main(svg,data[0],data[1]);
     });
 
-    d3.selectAll(".close-right").on("click",()=>{
-        d3.select("#infopanel").classed("infopanel-show",false);
+
+
+    d3.select("#icon-wheat").on("click",()=>{
+        d3.select("#infopanel-left-cultivos").classed("infopanel-left-show",true);
     });
 
-    d3.selectAll(".close-left").on("click",()=>{
-        d3.select("#infopanel-left-cultivos").classed("infopanel-left-show",false);
-        d3.select("#infopanel-left-cultivo").classed("infopanel-left-show",false);
+    d3.select("#icon-house").on("click",()=>{
+        d3.select("#infopanel-right-municipios").classed("infopanel-right-show",true);
     });
     
-
-    /*
-    let mapData = d3.json("/data/Castile and León_AL8.GeoJson");
-    let herbaceosData = d3.csv("/data/herbaceos_2017.csv");
-    let leñososData = d3.csv("/data/leñosos_2017.csv");
-    
-    let count = 0;
-    let loading = [mapData,herbaceosData,leñososData];
-    loading.forEach(p => {
-        p.then(()=>{
-            count++;
-            loadingText.text(`Cargando... ${Math.floor(100*count/loading.length)}%`);
-        });
-    })
-    Promise.all(loading).then(data => {
-        let mapData = data[0];
-        let herbaceosData = data[1];
-        let leñososData = data[2];
-
-        loadingText.remove();
-        main(svg,mapData,herbaceosData,leñososData);
-    });*/
 }
 
 function main(svg,mapData,cultivos){
@@ -104,6 +83,36 @@ function main(svg,mapData,cultivos){
         map.selectAll(".country").attr("transform",transform.toString());
     }
 
+    function fillMap(data){
+        try{
+            let id = data.properties.cultivos[0][0];
+            let res = cultivos.evaluate(`/agromapa/cultivo[@id='${id}']/color/text()`,cultivos,null,XPathResult.ANY_TYPE,null);
+            let color = res.iterateNext().data;
+            return color;
+        }catch(e){
+            return "white";
+        }
+    }
+
+    function showMunicipio(data){
+        d3.select("#infotitle").text(data.properties.localname);
+        d3.select("#infoprovincia").text(data.properties.alltags["is_in:province"]);
+        const sparqlQuery = `SELECT ?image WHERE { 
+            wd:${data.properties.wikidata} wdt:P18 ?image. 
+            }`;
+        
+        queryDispatcher.query( sparqlQuery ).then( query => {
+            let url = query.results.bindings[0].image.value;
+            d3.select("#infoimage").style(`background-image`,`url('${url}')`);
+        } );
+        let infopanel = d3.select("#infopanel-right-municipio");
+        let infocultivos = d3.select("#infocultivos");
+        infocultivo(data.properties.cultivos,
+            window.innerWidth/4,
+            data.properties.cultivos.length*20);
+        infopanel.classed("infopanel-right-show",true);
+    }
+
     let invisibleRect = map
         .append("rect")
         .attr("x",0)
@@ -120,37 +129,13 @@ function main(svg,mapData,cultivos){
         .attr("class","country")
         .attr("d",geoPath)
         .style("stroke","black")
-        .style("fill",(data,i)=>{
-            try{
-                let id = data.properties.cultivos[0][0];
-                let res = cultivos.evaluate(`/agromapa/cultivo[@id='${id}']/color/text()`,cultivos,null,XPathResult.ANY_TYPE,null);
-                let color = res.iterateNext().data;
-                return color;
-            }catch(e){
-                return "white";
-            }
-        })
+        .style("fill",fillMap)
         .on("mouseover",(data)=>{
 
         })
         .on("click",(data)=>{
             if (d3.event.defaultPrevented) return;
-            d3.select("#infotitle").text(data.properties.localname);
-            d3.select("#infoprovincia").text(data.properties.alltags["is_in:province"]);
-            const sparqlQuery = `SELECT ?image WHERE { 
-                wd:${data.properties.wikidata} wdt:P18 ?image. 
-              }`;
-            
-            queryDispatcher.query( sparqlQuery ).then( query => {
-                let url = query.results.bindings[0].image.value;
-                d3.select("#infoimage").style(`background-image`,`url('${url}')`);
-            } );
-            let infopanel = d3.select("#infopanel");
-            let infocultivos = d3.select("#infocultivos");
-            infocultivo(data.properties.cultivos,
-                window.innerWidth/4,
-                data.properties.cultivos.length*20);
-            infopanel.classed("infopanel-show",true);
+            showMunicipio(data);
         });
 
     // PANEL LISTADO CULTIVOS
@@ -182,6 +167,7 @@ function main(svg,mapData,cultivos){
                     let imagen = r.results.bindings[0].imagen.value;
                     d3.select("#cientifico").text(scientific);
                     d3.select("#cultivo-imagen").style(`background-image`,`url('${imagen}')`);
+                    d3.select("#links-cultivo").html("");
 
                     let urlSet = new Set();
                     for(let i=0;i<r.results.bindings.length;i++){
@@ -207,9 +193,57 @@ function main(svg,mapData,cultivos){
             let panel = d3.select("#infopanel-left-cultivo");
             panel.classed("infopanel-left-show",true);
             d3.select("#cultivo").text(data.attributes.id.textContent);
+            d3.select("#ha-cultivadas").text(()=>{
+                let ha = 0;
+                for(let i=0;i<features.length;i++){
+                    let cultivo = features[i].properties.cultivos.filter((d)=>{
+                        if(d[0] == data.attributes.id.textContent){
+                            return true;
+                        }
+                    });
+                    if(cultivo.length > 0){
+                        ha += cultivo[0][1];
+                    }
+                }
+                return ha;
+            });
+            d3.selectAll(".country")
+                .style("fill",(c)=>{
+                    let cultivo = c.properties.cultivos.filter((d)=>{
+                        if(d[0] == data.attributes.id.textContent){
+                            return true;
+                        }
+                    });
+                    if(cultivo.length > 0){
+                        return "green";
+                    }else{
+                        return "white";
+                    }
+                });
         });
     
-    // a.children.item("wikidata").textContent
+    // PANEL LISTADO MUNICIPIOS
+    d3.select("#list-municipios")
+        .selectAll(".municipio")
+        .data(features)
+        .enter()
+        .append("p")
+        .classed("municipio",true)
+        .text((data) => { return data.properties.localname})
+        .on("click",(data)=>{
+            d3.select("#infopanel-right-municipios").classed("infopanel-right-show",false);
+            showMunicipio(data);
+        });
+    d3.selectAll(".close-left").on("click",()=>{
+        d3.select("#infopanel-left-cultivos").classed("infopanel-left-show",false);
+        d3.select("#infopanel-left-cultivo").classed("infopanel-left-show",false);
+        d3.selectAll(".country").style("fill",fillMap);
+    });
+
+    d3.selectAll(".close-right").on("click",()=>{
+        d3.select("#infopanel-right-municipios").classed("infopanel-right-show",false);
+        d3.select("#infopanel-right-municipio").classed("infopanel-right-show",false);
+    });
     
 }
 

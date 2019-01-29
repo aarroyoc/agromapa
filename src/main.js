@@ -26,6 +26,17 @@ function setup(){
         .attr("width",WIDTH)
         .attr("height",HEIGHT);
 
+
+    let radial = svg.append("defs")
+        .append("radialGradient")
+        .attr("id","selectGradient");
+    radial.append("stop")
+        .attr("offset","10%")
+        .attr("stop-color","gold");
+    radial.append("stop")
+        .attr("offset","95%")
+        .attr("stop-color","blue");
+
     let loadingText = svg
         .append("text")
         .attr("x","50%")
@@ -122,6 +133,13 @@ function main(svg,mapData,cultivos){
     }
 
     function showMunicipio(data){
+        zoom.scaleTo(map,9.5);
+        let center=geoPath.centroid(data);
+        zoom.translateTo(map,center[0],center[1]);
+
+        d3.selectAll(".country").style("fill",fillMap);
+        d3.select(`#municipio-${data.properties.wikidata}`).style("fill","url(#selectGradient)");
+
         d3.select("#infotitle").text(data.properties.localname);
         d3.select("#infoprovincia").text(data.properties.alltags["is_in:province"]);
         const sparqlQuery = `SELECT ?image WHERE { 
@@ -133,7 +151,7 @@ function main(svg,mapData,cultivos){
             d3.select("#infoimage").style(`background-image`,`url('${url}')`);
         } );
         let infopanel = d3.select("#infopanel-right-municipio");
-        let infocultivos = d3.select("#infocultivos");
+
         infocultivo(data.properties.cultivos,
             window.innerWidth/4,
             data.properties.cultivos.length*20);
@@ -154,6 +172,7 @@ function main(svg,mapData,cultivos){
         .enter()
         .append("path")
         .attr("class","country")
+        .attr("id",(data)=> { return `municipio-${data.properties.wikidata}`;})
         .attr("vector-effect", "non-scaling-stroke")
         .attr("d",geoPath)
         .style("stroke","black")
@@ -161,7 +180,7 @@ function main(svg,mapData,cultivos){
         .on("mouseover",(data)=>{
 
         })
-        .on("click",(data)=>{
+        .on("click",(data,i,e)=>{
             if (d3.event.defaultPrevented) return;
             showMunicipio(data);
         });
@@ -324,6 +343,7 @@ function main(svg,mapData,cultivos){
     d3.selectAll(".close-right").on("click",()=>{
         d3.select("#infopanel-right-municipios").classed("infopanel-right-show",false);
         d3.select("#infopanel-right-municipio").classed("infopanel-right-show",false);
+        d3.selectAll(".country").style("fill",fillMap);
     });
     
 }

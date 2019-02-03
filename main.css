@@ -89,6 +89,7 @@ body, #map{
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    min-height: 3em;
 }
 .infoheader > h1{
     flex: 1;

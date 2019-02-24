@@ -47,7 +47,7 @@ function setup(){
     let mapPromise = new Promise((resolve,reject)=>{
         let t = ".";
         let xhr = new XMLHttpRequest();
-        xhr.open("GET","/data/AgroMapa.GeoJson",true);
+        xhr.open("GET","data/AgroMapa.GeoJson",true);
         xhr.onprogress = (event) => {
             console.log(`Cargando... ${Math.floor(100*event.loaded/event.total)}%`);
             loadingText.text(`Cargando${t}`);
@@ -63,7 +63,7 @@ function setup(){
     });
     let cultivosPromise = new Promise((resolve,reject)=>{
         let xhr = new XMLHttpRequest();
-        xhr.open("GET","/data/cultivos.xml",true);
+        xhr.open("GET","data/cultivos.xml",true);
         xhr.onload = () => {
             resolve(xhr.responseXML);
         };

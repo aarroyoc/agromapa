@@ -4,3 +4,5 @@ Ver donde existe ese cultivo (de forma significativa)
 Ver evolución histórica
 Conexión WikiData-Wikipedia
 Multiidioma
+Controlar min-max zoom y desplazamiento, así como poner etiquetas a los municipios cuando estás cerca
+
